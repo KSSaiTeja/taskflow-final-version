@@ -1,6 +1,22 @@
+import { auth } from "@clerk/nextjs";
 import { OrgControl } from "./_components/org-control";
 
-const OrganisationIdLayout = ({ children }: { children: React.ReactNode }) => {
+
+export async function generateMetadata() {
+  const { orgSlug } = auth();
+
+  if (!orgSlug) {
+    return {
+      title: "Organization",
+    };
+  }
+
+  return {
+    title: orgSlug || "org", // orgSlug will be used as the title if it exists
+  };
+}
+
+const OrganizationIdLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <OrgControl />
@@ -9,4 +25,4 @@ const OrganisationIdLayout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default OrganisationIdLayout;
+export default OrganizationIdLayout;
