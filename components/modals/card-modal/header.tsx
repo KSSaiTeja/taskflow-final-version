@@ -12,7 +12,6 @@ import { updateCard } from "@/actions/update-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { FormInput } from "@/components/form/form-input";
 
- 
 interface HeaderProps {
   data: CardWithList;
 }
