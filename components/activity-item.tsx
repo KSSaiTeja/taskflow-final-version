@@ -17,7 +17,7 @@ export const ActivityItem = ({ data }: ActivityItemProps) => {
       <div className="flex flex-col space-y-0.5">
         <p className="text-sm text-muted-foreground">
           <span className="font-semibold lowercase text-neutral-700">
-            {data.userName}
+            {data.userName}{" "}
           </span>
           {generateLogMessage(data)}
         </p>
