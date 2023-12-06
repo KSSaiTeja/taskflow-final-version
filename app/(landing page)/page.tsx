@@ -1,5 +1,8 @@
-import { Medal } from "lucide-react";
+"use client";
 import localFont from "next/font/local";
+import Lottie from "lottie-react";
+import animationData from "@/lottie/medal.json";
+import newbg from "@/lottie/newbg.json";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -17,7 +20,7 @@ const textFont = Poppins({
 
 const LandingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="flex items-center justify-center top-0 flex-col">
       <div
         className={cn(
           "flex items-center justify-center flex-col",
@@ -25,8 +28,14 @@ const LandingPage = () => {
         )}
       >
         <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
-          <Medal className="h-6 w-6 mr-2" />
+          <Lottie
+            animationData={animationData}
+            className="h-7 w-7 mr-2" // Adjust the size and styling as needed
+          />
           best task management tool
+        </div>
+        <div className="flex items-center justify-center mt-2">
+          <Lottie animationData={newbg} className="h-64 w-80 mb-4" />
         </div>
         <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
           TaskFlow helps the team
